@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أبو مصطفى للتشطيبات المعمارية | شغل فاخر مضمون</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Alex', sans-serif;
+            background: #ffffff;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #333;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #fff, #ccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-phone {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .header-phone:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/><rect width="100%" height="100%" fill="%23111111"/></svg>');
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #fff, #ddd, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 20px #fff); }
+            to { filter: drop-shadow(0 0 30px #fff); }
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #00ff88, #00cc6a);
+            color: #000;
+            padding: 20px 40px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0,255,136,0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,255,136,0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            padding: 20px 40px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Services */
+        .services {
+            padding: 120px 0 80px;
+            background: #111;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 60px;
+            background: linear-gradient(45deg, #fff, #ccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: rgba(255,255,255,0.05);
+            padding: 40px 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00ff88, #00cc6a, #00ff88);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            background: rgba(255,255,255,0.1);
+            box-shadow: 0 30px 60px rgba(0,255,136,0.2);
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #000 0%, #111 100%);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .contact-info h2 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #00ff88, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .phone-big {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 30px 0;
+            background: linear-gradient(45deg, #00ff88, #00cc6a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #00ff88;
+            box-shadow: 0 0 20px rgba(0,255,136,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            width: 80px;
+            height: 80px;
+            bottom: 40px;
+            left: 40px;
+            background: linear-gradient(45deg, #00ff88, #00cc6a);
+            color: #000;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0,255,136,0.5);
+            z-index: 10000;
+            line-height: 80px;
+            transition: all 0.3s ease;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-10px) scale(1.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 3rem; }
+            .hero p { font-size: 1.2rem; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .contact-content { grid-template-columns: 1fr; gap: 40px; }
+            .services-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">👨‍🔧 أبو مصطفى</div>
+                <a href="tel:+201008739515" class="header-phone">📞 01008739515</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>أبو مصطفى<br>التشطيبات المعمارية</h1>
+                <p>شغل فاخر بأيدي محترفين | ضمان مدى الحياة | أسعار تنافسية</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/201008739515" class="btn-primary" target="_blank">💬 واتساب فوري</a>
+                    <a href="tel:+201008739515" class="btn-secondary">📲 اتصل الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">خدماتنا المتكاملة</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>دهانات فاخرة</h3>
+                    <p>أجود أنواع الدهانات العالمية بألوان عصرية ومتانة عالية</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🚪</span>
+                    <h3>أبواب وشبابيك</h3>
+                    <p>ألوميتال وألمنيوم وخشب بأحدث التصاميم والتقنيات</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🔨</span>
+                    <h3>نجارة ومطابخ</h3>
+                    <p>مطابخ مودرن وكلاسيك ودولاب ملابس بجودة فائقة</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">⚒️</span>
+                    <h3>سيراميك وأرضيات</h3>
+                    <p>تركيب سيراميك وبورسلين بأحدث الأساليب الاحترافية</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">💎</span>
+                    <h3>تشطيبات VIP</h3>
+                    <p>تشطيبات داخلية وخارجية فاخرة بمواد أول درجة</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🛠️</span>
+                    <h3>صيانة وترميم</h3>
+                    <p>ترميم وصيانة شاملة بأحدث الأجهزة والتقنيات</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>📞 تواصل معانا دلوقتي!</h2>
+                    <div class="phone-big">01008739515</div>
+                    <p style="font-size: 1.3rem; opacity: 0.9; margin-bottom: 30px;">
+                        أبو مصطفى بنفسه هيرد عليكم | عرض أسعار مجاني | مواعيد مرنة
+                    </p>
+                    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <a href="https://wa.me/201008739515" class="btn-primary" target="_blank" style="padding: 15px 30px;">واتساب</a>
+                        <a href="tel:+201008739515" class="btn-secondary" style="padding: 15px 30px;">اتصال</a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div 
+                        </div>
+                        <div class="form-group">
+                            
+                        </div>
+                        <div class="form-group">
+                            
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%; padding: 18px;">محمود عبدلله</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3 style="font-size: 1.8rem; margin-bottom: 15px;">👨‍🔧 أبو مصطفى للتشطيبات</h3>
+            <p style="opacity: 0.8;">📱 01008739515 | شغل فاخر مضمون | ضمان مدى الحياة</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/201008739515" class="whatsapp-float" target="_blank" title="واتساب أبو مصطفى">
+        💬
+    </a>
+</body>
+</html>
